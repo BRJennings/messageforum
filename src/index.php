@@ -22,7 +22,7 @@ else
         echo '<table border="1">
               <tr>
                   <th>Category</th>
-                  <th>Latest Post</th>
+                  <th>Description</th>
               </tr>';
         while($row = mysql_fetch_assoc($result))
         {
@@ -31,7 +31,7 @@ else
                     echo '<h3><a href="category.php?cat_id=' . $row['cat_id'] . '">' . $row['cat_name'] .': ' . $row['cat_desc'];
                 echo '</td>';
                 echo '<td class="rightpart">';
-                    echo '<h3><a href="topic.php?id=">Topic Description</a>';
+                    echo '<h3>Topic Description</a>';
                 echo '</td>';
             echo '</tr>';
            

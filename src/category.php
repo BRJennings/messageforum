@@ -4,7 +4,7 @@
 include 'connect.php';
 include 'header.php';
 
-// select category based on cat_id
+// Select category based on category ID.
 $sql = "SELECT cat_id, cat_name, cat_desc 
         FROM FORUM.categories
         WHERE cat_id = " . mysql_real_escape_string($_GET['cat_id']);
@@ -54,20 +54,24 @@ else
 	{
 	    // Set up the table to display posts
             echo  '<table border="1">
-	          <tr>
-                  <th>Topics</th>
-                  <th>Created on</th>
-                  </tr>';
+	           <tr>
+                       <th>Topics</th>
+                       <th>Created on</th>
+                   </tr>';
 
             while($row = mysql_fetch_assoc($result))
 	    {
 	        echo '<tr>';
                     echo '<td class="leftpart">';
-                        echo '<a href="topic.php?id="' . $row['topic_id'] , '">' . $row['topic_subj'] . '</a>';
+                        echo '<a href="topic.php?id=' . $row['topic_id'] . '">' . $row['topic_subj'] . '</a>';
+                    echo '</td>';
+                    echo '<td class="rightpart">';
+                        echo date('d-m-y', strtotime($row['topic_date']));
+                    echo '</td>';                        
 	        echo '</tr>';
 	    }
 	}
-
+      
     }
 }
 include 'footer.php';
