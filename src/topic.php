@@ -67,6 +67,17 @@ else
                 echo '</td>';
             echo '</tr>';
         }
+        echo '</table>';
+
+        // Create a reply form
+        echo '<div id="reply">';
+        echo '<h2>Reply:</h2>';
+        echo '<form method="POST" action="reply.php?id=' . $_GET['id'] . '">';
+        echo '<textarea name="content"></textarea>';
+        echo '<input type="submit" value="Submit Reply" />';
+        echo '</form>';
+        echo '</div>';
+        
     }
 }
 
