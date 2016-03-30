@@ -7,10 +7,10 @@ include 'header.php';
 // No return value.
 session_unset();
 
-// Inform user the are beign logged out.
+// Inform user they are being logged out.
 echo 'Logging out';
 
-// Redirect to main page
+// Redirect to main page after 6 seconds.
 header("refresh:6;url=index.php");
 
 include 'footer.php';

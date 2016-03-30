@@ -1,12 +1,15 @@
 <?php
+// signin.php
 include 'connect.php';
 include 'header.php';
 
+// Let the user knwo whats happening.
 echo '<h3>Sign In</h3>';
+
 //check if user is already signed in
 if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'] == true)
 {
-   echo 'You are already signed in. Do you want to<a href="signout.php>Sign Out?</a>';
+   echo 'You are already signed in. Do you want to<a href="logout.php>Sign Out?</a>';
 }
 else 
 {
@@ -77,6 +80,10 @@ else
                   $_SESSION['user_level'] = $row['user_level'];
                }
                echo 'Welcome ' . $_SESSION['user_name'] . '. Head to the <a href="index.php">Main Forum</a>';
+
+               // Return user to index.php main forum page after 6 second wait, 
+	       // unless they click on href.
+               header("refresh:6;url=index.php");
             }
          }
       }
