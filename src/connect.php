@@ -2,8 +2,8 @@
 //connect.php connects to mysql db FORUM
 
 $server = 'localhost';
-$username = 'root';
-$password = 'signals';
+$username = '';
+$password = '';
 $database = 'FORUM';
 
 if(!mysql_connect($server, $username, $password))
